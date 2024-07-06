@@ -1,0 +1,21 @@
+@import '../../styles/config';
+
+ .header {
+	padding: 13px 0;
+	background-color: red;
+	color: $white;
+
+	&-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.img-icon {
+		height: 16px;
+	}
+}
+
+.logo {
+	display: flex;
+}
