@@ -13,7 +13,7 @@ const Hero = () => {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		arrows: false,
-		// autoplay: true,
+		autoplay: true,
 		autoplaySpeed: 2280,
 		pauseOnHover: false,
 	};
