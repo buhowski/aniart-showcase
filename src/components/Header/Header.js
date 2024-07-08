@@ -1,51 +1,86 @@
+import React, { useState, useEffect } from 'react';
 import logoIcon from '../../assets/media/svg/logo.svg';
-import fbIcon from '../../assets/media/svg/facebook-f.svg';
-import twiIcon from '../../assets/media/svg/twi.svg';
-import instIcon from '../../assets/media/svg/inst.svg';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import {
+	faFacebookF,
+	faTwitter,
+	faInstagram,
+} from '@fortawesome/free-brands-svg-icons';
 
 import './Header.scss';
 
 const socialData = [
 	{
-		icon: fbIcon,
+		icon: faFacebookF,
 	},
 	{
-		icon: twiIcon,
+		icon: faTwitter,
 	},
 	{
-		icon: instIcon,
+		icon: faInstagram,
 	},
 ];
 
-const Header = () => {
-	return (
-		<header className='header'>
-			<div className='container '>
-				<div className='header-container'>
-					<div className='header-social'>
-						{socialData.map(({ icon }, index) => (
-							<a href='##' key={index}>
-								<img className='img-icon' src={icon} alt='desc' />
-							</a>
-						))}
-					</div>
+// Social component
+const SocialMediaLinks = ({ socialData }) => (
+	<div className='header-social'>
+		{socialData.map(({ icon }, index) => (
+			<a href='#social' key={index}>
+				<FontAwesomeIcon icon={icon} />
+			</a>
+		))}
+	</div>
+);
 
-					<div className='header-nav header-nav--left'>
-						<a href='#shop'>Shop</a>
-						<a href='#plan'>Plan My Kitchen</a>
-					</div>
+// Header component
+const Header = () => {
+	const [isActive, setIsActive] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			if (window.scrollY > 0) {
+				setIsActive(true);
+			} else {
+				setIsActive(false);
+			}
+		};
+
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
+
+	return (
+		<header className={`header ${isActive ? 'active' : ''}`}>
+			<div className='container'>
+				<div className='header-container'>
+					<SocialMediaLinks socialData={socialData} />
+
+					<nav className='header-nav header-nav--left'>
+						<a href='#shop'>
+							<span>Shop</span>
+						</a>
+						<a href='#plan'>
+							<span>Plan My Kitchen</span>
+						</a>
+					</nav>
 
 					<a href='/' className='logo'>
-						<img src={logoIcon} alt='desc' />
+						<img src={logoIcon} alt='Company Logo' />
 					</a>
 
-					<div className='header-nav header-nav--right'>
-						<a href='#about'>About Us</a>
-						<a href='#gallery'>Gallery</a>
-					</div>
+					<nav className='header-nav header-nav--right'>
+						<a href='#about'>
+							<span>About Us</span>
+						</a>
+						<a href='#gallery'>
+							<span>Gallery</span>
+						</a>
+					</nav>
 
 					<button type='button' className='btn-transparent'>
 						my order

@@ -6,6 +6,10 @@
 	position: relative;
 	overflow: hidden;
 
+	.img-icon {
+		width: 40px;
+	}
+
 	&-bg {
 		position: absolute;
 		z-index: -1;
@@ -24,13 +28,13 @@
 
 	&-logo {
 		text-align: center;
-		margin-bottom: 42px;
+		margin-bottom: 34px;
 		display: flex;
 		align-items: center;
 
 		a {
 			flex-shrink: 0;
-			margin: 0 20px;
+			margin: 0 19px;
 		}
 
 		&::after,
@@ -47,13 +51,34 @@
 .ul-title {
 	font-size: 24px;
 	font-weight: bold;
-	margin-bottom: 24px;
+	margin-bottom: 30px;
 	font-family: $secondary-fonts;
+
+	@include tablet {
+		margin-bottom: 15px;
+	}
 }
 
 .footer-grid {
 	display: flex;
 	justify-content: center;
+
+	@include tablet {
+		flex-direction: column;
+	}
+
+	ul {
+		white-space: nowrap;
+
+		&:not(:last-child) {
+			margin-right: 93px;
+
+			@include tablet {
+				margin-right: 0;
+				margin-bottom: 40px;
+			}
+		}
+	}
 
 	a {
 		font-size: 13px;
@@ -68,14 +93,36 @@
 	}
 }
 
+.footer-social {
+	@include tablet {
+		text-align: center;
+	}
+
+	.ul-title {
+		margin-bottom: 38px;
+	}
+
+	li:not(.ul-title) {
+		display: inline-block;
+
+		&:not(:last-child) {
+			margin-right: 15px;
+		}
+	}
+
+	a:hover {
+		opacity: 0.6;
+	}
+}
+
 .footer-copy {
 	border-bottom: 1px solid rgba($color: #fff, $alpha: 0.2);
 	text-align: center;
 	color: rgba($color: #fff, $alpha: 0.5);
 	line-height: 26px;
 	font-size: 13px;
-	margin-top: 48px;
-	padding-bottom: 60px;
+	margin-top: 38px;
+	padding-bottom: 59px;
 
 	p {
 		max-width: 368px;

@@ -22,12 +22,12 @@ const Gallery = () => {
 	];
 
 	return (
-		<section className='gallery'>
+		<section className='gallery' id='gallery'>
 			<h3>Customer Gallery</h3>
 
 			<div className='gallery-grid'>
 				{galleryData.map(({ img }, index) => (
-					<div className='gallery-item'>
+					<div className='gallery-item' key={index}>
 						<img src={img} alt='de' />
 					</div>
 				))}

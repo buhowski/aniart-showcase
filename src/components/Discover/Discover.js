@@ -4,7 +4,7 @@ import './Discover.scss';
 
 const Discover = () => {
 	return (
-		<section className='discover'>
+		<section className='discover' id='about'>
 			<div className='discover__img'>
 				<img src={discImg} alt='disc' />
 			</div>

@@ -48,14 +48,8 @@ $transition-time: 0.3s;
 	}
 }
 
-@mixin tabletSmall {
-	@media screen and (max-width: 768px) {
-		@content;
-	}
-}
-
 @mixin mobile {
-	@media screen and (max-width: 720px) {
+	@media screen and (max-width: 768px) {
 		@content;
 	}
 }

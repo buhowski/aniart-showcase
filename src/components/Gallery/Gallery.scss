@@ -4,18 +4,34 @@
 	text-align: center;
 	padding: 93px 0 100px;
 
+	@include tablet {
+		padding: 40px 0;
+	}
+
 	h3 {
-		margin-bottom: 38px;
+		margin-bottom: 36px;
 	}
 }
 
 .gallery-grid {
 	display: flex;
-	justify-content: center;
 	gap: 20px;
 	margin-bottom: 40px;
+	justify-content: center;
+
+	@include tablet {
+		flex-wrap: wrap;
+	}
 }
 
 .gallery-item {
 	display: flex;
+	width: 310px;
+	height: 310px;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 }

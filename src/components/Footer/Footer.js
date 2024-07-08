@@ -1,14 +1,16 @@
 import React from 'react';
+
 import logoIcon from '../../assets/media/svg/logo.svg';
-import fbIcon from '../../assets/media/svg/facebook-f.svg';
-import twiIcon from '../../assets/media/svg/twi.svg';
-import instIcon from '../../assets/media/svg/inst.svg';
+import fbIcon from '../../assets/media/svg/fb.svg';
+import twiIcon from '../../assets/media/svg/twit.svg';
+import instIcon from '../../assets/media/svg/insta.svg';
+
 import footerBg from '../../assets/media/footer.png';
 
 import './Footer.scss';
 
-const FooterNavList = ({ items, title, socialItem }) => (
-	<ul>
+const FooterNavList = ({ items, title, socialItem, className }) => (
+	<ul className={className}>
 		<li className='ul-title'>{title}</li>
 
 		{items.map((item, index) => (
@@ -64,15 +66,22 @@ const Footer = () => {
 				</div>
 
 				<div className='footer-grid'>
-					<FooterNavList items={navItemsAbout} title='About' />
+					<FooterNavList className='footer-about' items={navItemsAbout} title='About' />
 
-					<FooterNavList items={navItemsService} title='Service' />
+					<FooterNavList
+						className='footer-services'
+						items={navItemsService}
+						title='Service'
+					/>
 
-					<FooterNavList items={navItemsInfo} title='Info' />
+					<FooterNavList className='footer-info' items={navItemsInfo} title='Info' />
 
-					<div className='footer-social'>
-						<FooterNavList items={navItemsSocial} socialItem={true} title='Follow' />
-					</div>
+					<FooterNavList
+						className='footer-social'
+						items={navItemsSocial}
+						socialItem={true}
+						title='Follow'
+					/>
 				</div>
 
 				<div className='footer-copy'>

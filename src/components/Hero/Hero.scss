@@ -12,13 +12,14 @@
 	top: 50%;
 	transform: translate(-50%, -50%);
 	z-index: 10;
+	width: min(700px, 100%);
 
 	.sub {
-		margin-bottom: 12px;
+		margin-bottom: 5px;
 	}
 
 	h1 {
-		margin-bottom: 30px;
+		margin-bottom: 32px;
 	}
 }
 
