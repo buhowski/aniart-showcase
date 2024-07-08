@@ -23,19 +23,19 @@ const Gallery = () => {
 
 	return (
 		<section className='gallery'>
-			<div className=''>
-				<div className=''>
-					{galleryData.map(({ img }, index) => (
+			<h3>Customer Gallery</h3>
+
+			<div className='gallery-grid'>
+				{galleryData.map(({ img }, index) => (
+					<div className='gallery-item'>
 						<img src={img} alt='de' />
-					))}
-				</div>
+					</div>
+				))}
 			</div>
 
-			<div className=''>
-				<button type='button' className='main-btn'>
-					view more
-				</button>
-			</div>
+			<button type='button' className='main-btn'>
+				view more
+			</button>
 		</section>
 	);
 };

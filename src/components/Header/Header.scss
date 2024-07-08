@@ -1,13 +1,22 @@
 @import '../../styles/config';
 
- .header {
-	padding: 13px 0;
-	background-color: red;
+.header {
+	// background-color: red;
 	color: $white;
+	font-size: 13px;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1000;
 
 	&-container {
 		display: flex;
 		justify-content: center;
+		padding: 30px 0;
+		border-bottom: 1px solid rgba($white, 0.3);
 		align-items: center;
 	}
 
@@ -17,5 +26,34 @@
 }
 
 .logo {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 	display: flex;
+}
+
+.header-nav {
+	a {
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+	}
+
+	&--left {
+		margin-left: 130px;
+	}
+
+	&--right {
+		margin-left: auto;
+		margin-right: 60px;
+	}
+}
+
+.header-social {
+	a {
+		&:not(:last-child) {
+			margin-right: 10px;
+		}
+	}
 }

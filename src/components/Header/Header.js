@@ -23,33 +23,35 @@ const socialData = [
 const Header = () => {
 	return (
 		<header className='header'>
-			<div className='container header-container'>
-				<div className='header-social'>
-					{socialData.map(({ icon }, index) => (
-						<a href='##' key={index}>
-							<img className='img-icon' src={icon} alt='desc' />
-						</a>
-					))}
+			<div className='container '>
+				<div className='header-container'>
+					<div className='header-social'>
+						{socialData.map(({ icon }, index) => (
+							<a href='##' key={index}>
+								<img className='img-icon' src={icon} alt='desc' />
+							</a>
+						))}
+					</div>
+
+					<div className='header-nav header-nav--left'>
+						<a href='#shop'>Shop</a>
+						<a href='#plan'>Plan My Kitchen</a>
+					</div>
+
+					<a href='/' className='logo'>
+						<img src={logoIcon} alt='desc' />
+					</a>
+
+					<div className='header-nav header-nav--right'>
+						<a href='#about'>About Us</a>
+						<a href='#gallery'>Gallery</a>
+					</div>
+
+					<button type='button' className='btn-transparent'>
+						my order
+						<FontAwesomeIcon icon={faCartShopping} />
+					</button>
 				</div>
-
-				<div className='header-nav'>
-					<a href='##'>Shop</a>
-					<a href='##'>Plan My Kitchen</a>
-				</div>
-
-				<a href='/' className='logo'>
-					<img src={logoIcon} alt='desc' />
-				</a>
-
-				<div className='header-nav'>
-					<a href='##'>About Us</a>
-					<a href='##'>Gallery</a>
-				</div>
-
-				<button type='button' className='main-btn'>
-					my order
-					<FontAwesomeIcon icon={faCartShopping} />
-				</button>
 			</div>
 		</header>
 	);

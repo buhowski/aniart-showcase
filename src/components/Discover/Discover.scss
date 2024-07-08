@@ -1,0 +1,31 @@
+@import '../../styles/config';
+
+.discover {
+	display: flex;
+	align-items: center;
+
+	&__img {
+		width: 50%;
+		height: 667px;
+
+		img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+}
+
+.discover-info {
+	max-width: 580px;
+	margin-left: 50px;
+
+	&__sub {
+		color: $primary-color;
+		// margin-bottom: 15px;
+	}
+
+	&__text {
+		line-height: 28px;
+	}
+}

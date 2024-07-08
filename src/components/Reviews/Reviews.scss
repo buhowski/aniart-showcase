@@ -1,0 +1,26 @@
+@import '../../styles/config';
+
+.reviews {
+	text-align: center;
+	padding: 117px 0;
+	background-color: #eeeeee;
+}
+
+.review {
+	max-width: 600px;
+	margin-inline: auto;
+
+	&__sub {
+		color: $primary-color;
+	}
+
+	&__text {
+		font-size: 18px;
+		line-height: 32px;
+		margin-bottom: 5px;
+	}
+
+	&__name {
+		margin-bottom: 30px;
+	}
+}

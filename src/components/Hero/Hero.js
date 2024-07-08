@@ -14,14 +14,17 @@ const Hero = () => {
 
 	return (
 		<section className='hero'>
-			<Slider {...settings}>
-				<div className='simple-slider-item'>
-					<img className='hero__img' src={heroImg} alt='description' />
-					<p>Design and order your new kitchen online today</p>
+			<div className='simple-slider-item'>
+				<img className='hero__img' src={heroImg} alt='description' />
+
+				<div className='hero-info'>
+					<p className='sub'>Design and order your new kitchen online today</p>
 					<h1>Bespoke & made to measure handmade kitchen design</h1>
-					<button type='button'>Order Now</button>
+					<button type='button' className='main-btn'>
+						Order Now
+					</button>
 				</div>
-			</Slider>
+			</div>
 		</section>
 	);
 };
