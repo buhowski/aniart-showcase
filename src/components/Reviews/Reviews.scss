@@ -4,6 +4,12 @@
 	text-align: center;
 	padding: 117px 0;
 	background-color: #eeeeee;
+	overflow: hidden;
+
+	.slick-track {
+		display: flex;
+		align-items: center;
+	}
 }
 
 .review {

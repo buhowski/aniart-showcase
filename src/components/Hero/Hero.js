@@ -1,30 +1,42 @@
-import heroImg from '../../assets/media/hero.png';
+import React from 'react';
 import Slider from 'react-slick';
 
+import HeroSlide from './HeroSlide';
+import heroImg from '../../assets/media/hero.png';
+
+import '../../styles/slick-slider.scss';
 import './Hero.scss';
 
 const Hero = () => {
 	const settings = {
 		dots: true,
-		infinite: true,
-		speed: 500,
 		slidesToShow: 1,
 		slidesToScroll: 1,
+		// autoplay: true,
+		autoplaySpeed: 3000,
 	};
 
 	return (
 		<section className='hero'>
-			<div className='simple-slider-item'>
-				<img className='hero__img' src={heroImg} alt='description' />
+			<Slider {...settings}>
+				<HeroSlide
+					imgSrc={heroImg}
+					subText='Design and order your new kitchen online today'
+					mainHeading='Bespoke & made to measure handmade kitchen design'
+				/>
 
-				<div className='hero-info'>
-					<p className='sub'>Design and order your new kitchen online today</p>
-					<h1>Bespoke & made to measure handmade kitchen design</h1>
-					<button type='button' className='main-btn'>
-						Order Now
-					</button>
-				</div>
-			</div>
+				<HeroSlide
+					imgSrc={heroImg}
+					subText='02 Design and order your new kitchen online today'
+					mainHeading='02 Bespoke & made to measure handmade kitchen design'
+				/>
+
+				<HeroSlide
+					imgSrc={heroImg}
+					subText='03 Design and order your new kitchen online today'
+					mainHeading='03 Bespoke & made to measure handmade kitchen design'
+				/>
+			</Slider>
 		</section>
 	);
 };

@@ -1,8 +1,6 @@
 @import '../../styles/config';
 
 .hero {
-	position: relative;
-	height: 900px;
 	overflow: hidden;
 	text-align: center;
 	color: $white;
@@ -24,8 +22,10 @@
 	}
 }
 
-.simple-slider-item {
-	height: 100%;
+.hero-slider {
+	height: 100vh;
+	min-height: 600px;
+	position: relative;
 
 	img {
 		width: 100%;
